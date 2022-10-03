@@ -1,0 +1,41 @@
+/** CLOTHING STORE
+shirts (400)
+hats (200)
+pants (150)
+belts (50)
+sneakers (400)
+dresses (367)
+ties (150)
+scarves (75)
+underwear (500)
+socks (1000)
+necklace (230)
+glasses (400)
+earrings (100)
+purses (356)
+backpacks (100)
+**/
+-- Create a clothing store database
+CREATE TABLE clothes (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, color TEXT, sold INTEGER, price INTEGER);
+
+INSERT INTO clothes VALUES(1, "shirts", 400, "purple", 100, 15);
+INSERT INTO clothes VALUES (2, "hats", 200, "blue", 12, 12);
+INSERT INTO clothes VALUES (3, "pants", 150, "red", 4, 60);
+INSERT INTO clothes VALUES (4, "belts", 50, "yellow", 3, 25);
+INSERT INTO clothes VALUES (5, "sneakers", 400, "black", 34, 79);
+Insert INTO clothes VAlUES (6, "dresses", 367, "orange", 43, 65);
+INSERT INTO clothes VALUES (7, "ties", 150, "grey", 16, 17);
+INSERT INTO clothes VALUES (8, "scarves", 75, "green", 20, 10);
+INSERT INTO clothes VALUES (9, "underwear", 500, "white", 349, 6);
+INSERT INTO clothes VALUES (10, "socks", 1000, "black", 230, 7);
+INSERT INTO clothes VALUES (11, "necklace", 230, "gold", 144, 40);
+INSERT INTO clothes VALUES (12, "glasses", 400, "clear", 22, 21);
+INSERT INTO clothes VALUES (13, "earrings", 100, "sliver", 13, 11);
+INSERT INTO clothes VALUES (14, "purses", 356, "brown", 245, 60);
+INSERT INTO clothes VALUES (15, "backpacks",100, "muilticolored", 32, 75);
+
+-- display the database ordered by price that is greater than 11.
+SELECT * FROM clothes WHERE price> 11 ORDER BY price DESC;
+
+-- What is the sum of clothes sold by item
+SELECT sold, SUM(quantity) FROM clothes GROUP BY sold;
